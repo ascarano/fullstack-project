@@ -14,14 +14,17 @@ const Search = () => {
     e.preventDefault()
     axios({
       method: 'GET',
-      url: `http://localhost:3010/api/gifs/search?search=${search}`
+      url: `/api/gifs/search?search=${search}`
     })
     .then(response => {
       let searchGifs = response.data.data.map((gif) => {
         return {
           id: gif.id,
           title: gif.title,
-          url: gif.images.downsized.url
+          url: gif.images.downsized.url,
+          width:  gif.images.downsized.width,
+          height:  gif.images.downsized.height,
+          favorite: false
         }
       })
       setGifs(searchGifs)
@@ -46,6 +49,41 @@ const Search = () => {
     }
   }
 
+  const favoriteGif = (gif) => {
+    let updatedGif = {
+      ...gif,
+      favorite: true
+    }
+    let favoritedGif = gifs.indexOf(gif)
+    let updatedGifs = [...gifs]
+
+    updatedGifs.splice(favoritedGif, 1, updatedGif)
+
+    setGifs(updatedGifs)
+  }
+
+  const handleClick = (gif) => {
+    axios({
+      method: 'POST',
+      url: 'api/favorites',
+      data: { favorite: {
+          title: gif.title,
+          url: gif.url,
+          height: gif.height,
+          width: gif.width,
+          giphy_id: gif.id,
+        }
+      },
+    })
+    .then(response => {
+      favoriteGif(gif)
+    })
+    .catch(error => {
+      console.log(error)
+      favoriteGif(gif)
+    })
+  }
+
   return (
     <div className="search">
       <Link to="/favorites" className="link">Favorites</Link>
@@ -54,7 +92,7 @@ const Search = () => {
       handleInput={handleInput}
       validSearch={validSearch}
       />
-      <Gifs gifs={gifs} />
+      <Gifs gifs={gifs}  handleClick={handleClick} />
     </div>
   );
 }

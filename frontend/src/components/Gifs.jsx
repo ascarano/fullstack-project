@@ -13,7 +13,7 @@ const Gifs = props => {
       >
         {props.gifs.map(function(gif, i){
           return(
-            <Gif key={gif.id} gif={gif} />
+            <Gif key={gif.id} gif={gif} handleClick={props.handleClick} />
           )
         })}
       </Masonry>

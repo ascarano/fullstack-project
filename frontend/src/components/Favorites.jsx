@@ -9,9 +9,9 @@ const Favorites = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios({
+      await axios({
         method: 'GET',
-        url: 'http://localhost:3010/api/favorites'
+        url: '/api/favorites'
       })
       .then(response => {
         setFavorites(response.data)

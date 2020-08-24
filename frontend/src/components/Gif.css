@@ -25,3 +25,11 @@
     background: #5470B0;
   }
 }
+
+.favorite-action {
+  height: 70px;
+}
+
+.star {
+  margin: 1rem auto;
+}
