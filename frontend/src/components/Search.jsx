@@ -6,8 +6,22 @@ import './Search.css'
 
 const Search = () => {
   const [gifs, setGifs] = useState([])
+  const [favorites, setFavorites] = useState([])
   const [search, setSearch] = useState('')
   const [validSearch, setValidSearch] = useState(false)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios({
+        method: 'GET',
+        url: 'http://localhost:3010/api/favorites'
+      })
+      .then(response => {
+        setFavorites(response.data)
+      });
+    }
+    fetchData()
+  }, []);
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -19,7 +33,7 @@ const Search = () => {
       setGifs(response.data.data)
     })
     .catch(error => {
-      console.log(error.response.data)
+      console.log(error)
     })
   }
 

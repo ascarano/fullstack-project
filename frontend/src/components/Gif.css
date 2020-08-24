@@ -1,9 +1,7 @@
 .gif {
   padding: 10px;
   width: 28%;
-  border: 5px solid transparent;
-  border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-  border-image-slice: 1;
+  border: 5px solid #757575;
   margin: 10px;
   overflow: hidden;
   animation: expand .5s ease-in-out;
@@ -11,6 +9,7 @@
 
 .image {
   width: 100%;
+  min-height: 100px;
 }
 
 @media (max-width: 1000px) {

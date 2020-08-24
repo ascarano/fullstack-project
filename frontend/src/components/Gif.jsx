@@ -6,8 +6,6 @@ const Gif = props => (
     <img
       className="image"
       src={props.gif.images.downsized.url}
-      height={props.gif.images.downsized.height}
-      width={props.gif.images.downsized.width}
       alt={props.gif.title}
     />
   </div>
