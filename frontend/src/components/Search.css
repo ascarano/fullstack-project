@@ -1,0 +1,10 @@
+.search {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.link {
+  font-size:18px;
+  color: black;
+  padding: 30px;
+}

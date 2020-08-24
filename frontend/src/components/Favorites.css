@@ -1,0 +1,17 @@
+.favorites {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.title {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  flex-direction: row;
+  margin: 40px 0px;
+}
+
+.link {
+  font-size:18px;
+  color: black;
+  padding: 30px;
+}

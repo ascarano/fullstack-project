@@ -1,0 +1,35 @@
+.gif {
+  padding: 10px;
+  width: 28%;
+  border: 5px solid #757575;
+  margin: 10px;
+  overflow: hidden;
+  animation: expand .5s ease-in-out;
+}
+
+.image {
+  width: 100%;
+  min-height: 100px;
+}
+
+@media (max-width: 1000px) {
+  .gif {
+    width: 75%;
+  }
+}
+
+@keyframes expand {
+  from {
+    transform: scale(0);
+    opacity: 0;
+    background: #5470B0;
+  }
+}
+
+.favorite-action {
+  height: 70px;
+}
+
+.star {
+  margin: 1rem auto;
+}

@@ -1,0 +1,6 @@
+.gifs {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  transition: all 1s ease 1s;
+}
