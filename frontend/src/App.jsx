@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+} from "react-router-dom"
 import Search from './components/Search'
 import Favorites from './components/Favorites'
-import './App.css';
+import './App.css'
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
         </Switch>
       </div>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

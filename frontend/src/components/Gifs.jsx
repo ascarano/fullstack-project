@@ -1,6 +1,6 @@
 import React from 'react'
 import Gif from './Gif'
-import Masonry from 'react-masonry-component';
+import Masonry from 'react-masonry-component'
 import './Gifs.css'
 
 const Gifs = props => {

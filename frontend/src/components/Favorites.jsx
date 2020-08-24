@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Gifs from './Gifs'
 import axios from 'axios'
 import './Favorites.css'
@@ -30,7 +30,7 @@ const Favorites = (props) => {
       <h1 className="title">Favorites</h1>
       <Gifs gifs={favorites} />
     </div>
-  );
+  )
 }
 
-export default Favorites;
+export default Favorites

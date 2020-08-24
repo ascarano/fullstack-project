@@ -1,5 +1,5 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React from 'react'
+import { render } from '@testing-library/react'
 import Gif from './Gif';
 
 test('renders a gif', () => {
@@ -15,7 +15,7 @@ test('renders a gif', () => {
     }
   }
 
-  const { getByAltText } = render(<Gif gif={gif}/>);
-  const gifImg = getByAltText(gif.title);
-  expect(gifImg).toBeInTheDocument();
+  const { getByAltText } = render(<Gif gif={gif}/>)
+  const gifImg = getByAltText(gif.title)
+  expect(gifImg).toBeInTheDocument()
 });

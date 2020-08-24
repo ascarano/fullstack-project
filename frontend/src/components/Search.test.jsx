@@ -1,6 +1,7 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import Search from './Search';
+import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { render } from '@testing-library/react'
+import Search from './Search'
 import SearchBar from './SearchBar'
 import Gifs from './Gifs'
 
@@ -24,7 +25,7 @@ describe('Search', () => {
       }
     ]
 
-    render(<Gifs gifs={gifs} />);
-  });
-});
+    render(<Gifs gifs={gifs} />)
+  })
+})
 

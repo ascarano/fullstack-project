@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import './SearchBar.css'
 
 const SearchBar = (props) => {
@@ -17,7 +17,7 @@ const SearchBar = (props) => {
         </div>
       </form>
     </div>
-  );
+  )
 }
 
-export default SearchBar;
+export default SearchBar

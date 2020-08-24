@@ -1,5 +1,5 @@
 import React from 'react'
-import star from '../star.svg';
+import star from '../star.svg'
 import './Gif.css'
 
 const Gif = props => {
