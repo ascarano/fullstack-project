@@ -5,6 +5,8 @@ import './Gif.css'
 const Gif = props => {
   const pathname = window.location.pathname
 
+  // Render favorite button or star for item that was
+  // favorited
   const favoriteButton = () => {
     if (pathname === '/') {
       if (props.gif.favorite) {

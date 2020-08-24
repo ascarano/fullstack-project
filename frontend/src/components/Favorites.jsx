@@ -7,6 +7,7 @@ import './Favorites.css'
 const Favorites = (props) => {
   const [favorites, setFavorites] = useState([])
 
+  // Update favorites on render
   useEffect(() => {
     const fetchData = async () => {
       await axios({
@@ -15,6 +16,9 @@ const Favorites = (props) => {
       })
       .then(response => {
         setFavorites(response.data)
+      })
+      .catch(error => {
+        console.log(error)
       });
     }
     fetchData()

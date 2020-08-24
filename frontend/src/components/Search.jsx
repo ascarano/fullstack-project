@@ -10,6 +10,7 @@ const Search = () => {
   const [search, setSearch] = useState('')
   const [validSearch, setValidSearch] = useState(false)
 
+  // Handle search submissions
   const handleSubmit = e => {
     e.preventDefault()
     axios({
@@ -34,6 +35,7 @@ const Search = () => {
     })
   }
 
+  // Handle search input
   const handleInput = e => {
     e.preventDefault()
     const newSearch = e.target.value
@@ -41,6 +43,7 @@ const Search = () => {
     validateSearch(newSearch)
   }
 
+  // Require at least one character to search
   const validateSearch = (newSearch) => {
     if (newSearch.length > 0) {
       setValidSearch(true)
@@ -49,19 +52,21 @@ const Search = () => {
     }
   }
 
+  // Update gif search results to show favorited gif
   const favoriteGif = (gif) => {
-    let updatedGif = {
+    const updatedGif = {
       ...gif,
       favorite: true
     }
-    let favoritedGif = gifs.indexOf(gif)
-    let updatedGifs = [...gifs]
+    const favoritedGif = gifs.indexOf(gif)
 
+    let updatedGifs = [...gifs]
     updatedGifs.splice(favoritedGif, 1, updatedGif)
 
     setGifs(updatedGifs)
   }
 
+  // Handle favorite button clicks
   const handleClick = (gif) => {
     axios({
       method: 'POST',
